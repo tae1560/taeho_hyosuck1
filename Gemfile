@@ -33,3 +33,8 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
+
+
+# image upload
+gem "paperclip", "~> 3.0"
+gem 'protected_attributes'

@@ -1,0 +1,40 @@
+<div class="admin_title_container">
+    <span class="admin_title">
+    STATISTICS
+
+    <% 30.times do %>
+        &nbsp;
+        <% end %>
+    </span>
+    </div>
+
+  <table class="admin_content" style="margin: auto; margin-top:40px;">
+    <tr>
+      <td>SCAN & DATA PROCESSING [ENTER]</td>
+      <td><%= Statistic.instance.enter %></td>
+    </tr>
+    <tr>
+      <td>SCAN & DATA PROCESSING [OPEN]</td>
+      <td><%= Statistic.instance.open %></td>
+    </tr>
+    <tr>
+      <td>PROCESSING [CANCEL]</td>
+      <td><%= Statistic.instance.cancel %></td>
+    </tr>
+    <tr>
+      <td>RESULT [RESCAN]</td>
+      <td><%= Statistic.instance.rescan %></td>
+    </tr>
+    <tr>
+      <td>RESULT [PRINT]</td>
+      <td><%= Statistic.instance.result_print %></td>
+    </tr>
+  </table>
+    <%= form_for :statistics do |f| %>
+    <div style="margin-top: 70px">
+      <a href="/" >
+        <img src="/images/back_button.png">
+      </a>
+      <%= image_submit_tag "/images/reset_button.png" %>
+    </div>
+    <% end %>

@@ -11,7 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828004828) do
+ActiveRecord::Schema.define(version: 20130828142315) do
+
+  create_table "processings", force: true do |t|
+    t.integer  "year"
+    t.integer  "month"
+    t.integer  "day"
+    t.string   "name"
+    t.string   "gender"
+    t.string   "blood_type"
+    t.string   "category"
+    t.string   "data_type"
+    t.string   "scan_image_file_name"
+    t.string   "scan_image_content_type"
+    t.integer  "scan_image_file_size"
+    t.datetime "scan_image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "results", force: true do |t|
+    t.integer  "number"
+    t.integer  "start_month"
+    t.integer  "start_day"
+    t.integer  "end_month"
+    t.integer  "end_day"
+    t.string   "blood_type"
+    t.string   "category"
+    t.text     "text1"
+    t.text     "text2"
+    t.string   "image1_file_name"
+    t.string   "image1_content_type"
+    t.integer  "image1_file_size"
+    t.datetime "image1_updated_at"
+    t.string   "image2_file_name"
+    t.string   "image2_content_type"
+    t.integer  "image2_file_size"
+    t.datetime "image2_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "results", ["number"], name: "index_results_on_number", unique: true
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -23,6 +64,22 @@ ActiveRecord::Schema.define(version: 20130828004828) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "sample_users", force: true do |t|
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statistics", force: true do |t|
+    t.integer  "enter"
+    t.integer  "open"
+    t.integer  "cancel"
+    t.integer  "rescan"
+    t.integer  "result_print"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

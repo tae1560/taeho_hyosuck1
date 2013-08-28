@@ -1,0 +1,65 @@
+<div class="container">
+<div style="margin-top: 10px;">
+  <%= form_for :processing, :url => "/result", :html => { :multipart => true } do |form| %>
+  <table>
+    <tr>
+      <td rowspan="3"><img src="/images/description.png" /></td>
+      <td colspan="2" class="admin_title" style="padding-top:30px">SCAN & DATA PROCESSING</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="admin_content" style="margin-top: 20px; margin-bottom: 20px; text-align: left;">SCAN IMAGE</div>
+        <div><img src="/images/scan_image.png"/></div>
+        <%= form.file_field :scan_image %>
+      </td>
+      <td style="text-align: left;">
+        <div class="admin_content" style="margin-top: 20px; margin-bottom: 20px; text-align: left;">IDENTICATION DATA</div>
+        <div class="admin_content_sub">BIRTHDAY DATE <input type="text" name="date" style="width:30px">
+          MONTH <input type="text" name="month" style="width:30px">
+          YEAR <input type="text" name="year" style="width:50px"></div>
+
+        <div class="admin_content_sub">
+          NAME <input type="text" name="name" style="width:300px"></div>
+        <div class="admin_content_sub">
+          GENDER
+          <input type="radio" name="gender" value="MALE"> MALE
+          <input type="radio" name="gender" value="FEMALE"> FEMALE
+
+        </div>
+        <div class="admin_content_sub">
+          BLOODTYPE
+          <input type="radio" name="blood_type" value="A"> A
+          <input type="radio" name="blood_type" value="B"> B
+          <input type="radio" name="blood_type" value="AB"> AB
+          <input type="radio" name="blood_type" value="O"> O
+        </div>
+        <div class="admin_content_sub">
+          CATEGORY
+          <input type="radio" name="category" value="REGULAR"> REGULAR
+          <input type="radio" name="category" value="INFANTS"> INFANTS
+          <input type="radio" name="category" value="CHILD"> CHILD
+        </div>
+
+        <div class="admin_content_sub">
+          DATA TYPE
+
+          <table>
+            <tr>
+              <td style="text-align: center;"><input type="radio" name="data_type" value="LEFT HAND"> LEFT HAND
+                <br/> <img src="/images/left_hand.png" />
+              </td>
+              <td style="text-align: center;"><input type="radio" name="data_type" value="RIGHT HAND"> RIGHT HAND
+                <br/> <img src="/images/right_hand.png" /></td>
+              <td><%= image_submit_tag "/images/scan_enter_button.png" %></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"> <img src="/images/scan_description.png" </td>
+    </tr>
+  </table>
+  <% end %>
+</div>
+</div>

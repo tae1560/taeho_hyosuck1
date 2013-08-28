@@ -1,0 +1,41 @@
+<div class="container">
+<div style="margin-top: 10px;">
+  <table>
+    <tr>
+      <td rowspan="2"><img src="/images/description.png" /></td>
+      <td class="admin_title" style="padding-top:30px">RESULT</td>
+    </tr>
+
+    <tr>
+      <td style="max-width: 700px;">
+        <table class="admin_content">
+          <tr>
+            <td>#<%= @result.two_digit_number%></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> <%= image_tag @result.image1.url %> </td>
+            <td> <%= image_tag @result.image2.url %> </td>
+          </tr>
+          <tr>
+            <td style="font-size: 15px;"> CHARACTER & DISPOSITION </td>
+            <td style="font-size: 15px;"> ADVANTAGES AND DISADVANTAGES </td>
+            <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
+            <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
+          </tr>
+          <tr>
+            <td><textarea name="text1"><%= @result.text1 %></textarea></td>
+            <td><textarea name="text2"><%= @result.text2 %></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="text-align: right;">
+              <a href="scan" ><img src="/images/rescan_button.png" /> </a>
+              <a href="#" ><img src="/images/print_button.png" onclick="window.print()" /> </a> </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>

@@ -10,26 +10,35 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
+    <!--<div class="navbar navbar-fixed-top">-->
+    <div class="top_layout navbar-fixed-top">
+
+      <div class="top_menu">
+        <a href="/"><img src="/images/menu1.png" /></a>
+        <a href="/scan"><img src="/images/menu2.png" /></a>
+        <a href="/statistics"><img src="/images/menu3.png" /></a>
+      </div>
     </div>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
+    <div id="main" role="main" class="mid_layout">
+
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+
+
+      <!--<div class="container">-->
+
+        <!--<div class="content">-->
+
+           <!--<div class="row">-->
+            <!--<div class="span12">-->
+
+            <!--</div>-->
+          <!--</div>-->
+          <!--<footer>-->
+          <!--</footer>-->
+        <!--</div>-->
+      <!--</div> &lt;!&ndash;! end of .container &ndash;&gt;-->
     </div> <!--! end of #main -->
+    <div class="bottom_layout navbar-fixed-bottom"></div>
   </body>
 </html>
