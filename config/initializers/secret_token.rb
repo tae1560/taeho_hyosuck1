@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Hyosuck1::Application.config.secret_key_base = 'de90a33db21e5ff904e2ec2a2c6d87f0da2c77a82f45a0bd034eea2921327dc930e4d426c4d01ea550069ab04ee9e1f92d938697cdedf6fa98b542ad54ee5e8c'
+Hyosuck1::Application.config.secret_key_base = '8118962a4b252266ae411abef24cf0e0e589526bc9d6aca51813e3f1be921a3363a60c8c04644620f443dedd5153db217114d46cd7ef9948509e12ae6ca6a3e9'
