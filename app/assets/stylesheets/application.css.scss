@@ -46,11 +46,17 @@ body {
 .mid_layout {
   text-align: center;
   width: 1366px;
+  max-width: 1366px;
   margin: auto;
 }
 .bottom_layout {
   background-image:url('../images/bottom_bg.png');
   height: 44px;
+}
+
+.image_tr img {
+  max-width: 330px;
+  max-height: 210px;
 }
 
 .admin_title {

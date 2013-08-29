@@ -14,7 +14,7 @@
             <td colspan="3">
               <%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></td>
           </tr>
-          <tr>
+          <tr class="image_tr">
             <td> <%= image_tag @result.image1.url %> </td>
             <td> <%= image_tag @result.image2.url %> </td>
             <td></td>
