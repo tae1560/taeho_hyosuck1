@@ -1,9 +1,3 @@
-<style>
-    input[type=radio] {
-        margin-left: 20px;
-        margin-bottom: 10px;
-    }
-</style>
 <div class="container">
 <div style="margin-top: 10px;">
   <%= form_for :processing, :url => "/result", :html => { :multipart => true } do |form| %>
@@ -15,8 +9,9 @@
     <tr>
       <td>
         <div class="admin_content" style="margin-top: 20px; margin-bottom: 20px; text-align: left;">SCAN IMAGE</div>
-        <div><img src="/images/scan_image.png"/></div>
+        <div><img id="scan_image" src="/images/scan_image.png"/></div>
         <!--processing_scan_image-->
+
         <div style="margin-top: 10px;"><img src="/images/open_button.png" onclick="call_event('open'); $('#processing_scan_image').click();"/></div>
         <div style='height: 0px;width:0px; overflow:hidden;'><%= form.file_field :scan_image %></div>
 
@@ -67,9 +62,26 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2"> <img src="/images/scan_description.png" </td>
+      <td colspan="2"> <img src="/images/scan_description.png" /> </td>
     </tr>
   </table>
   <% end %>
 </div>
 </div>
+
+<style>
+    input[type=radio] {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    #scan_image {
+        width: 174px;
+        height: 260px;
+    }
+</style>
+
+<script>
+    $("#processing_scan_image").change(function() {
+        readURL(this, $("#scan_image"));
+    });
+</script>
