@@ -55,6 +55,26 @@
         <!--</div>-->
       <!--</div> &lt;!&ndash;! end of .container &ndash;&gt;-->
     </div> <!--! end of #main -->
-    <div class="bottom_layout navbar-fixed-bottom"></div>
+    <div class="bottom_layout navbar-fixed-bottom">
+      <div style="color: white; margin-top: 14px;">
+        <span id="time_span" style="width: 170px; display: inline-block; text-align: center;"></span>
+        <span style="margin-left: 30px; text-align: center;">
+            SCAN & DATA PROCESSING [ENTER] : <%= Statistic.instance.enter %>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          RESULT [PRINT] : <%= Statistic.instance.result_print %>
+        </span>
+
+      </div>
+
+    </div>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+      $("#time_span").html($.format.date(new Date(), 'dd-MM-yyyy a hh:mm'))
+      setInterval(function () {
+          $("#time_span").html($.format.date(new Date(), 'dd-MM-yyyy a hh:mm'))
+      }, 5000);
+    </script>
+
   </body>
 </html>
+

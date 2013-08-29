@@ -76,19 +76,19 @@ class ServicesController < ApplicationController
     # validates
 
     # date : 01~31
-    unless params["date"].to_i >= 1 and params["date"].to_i <= 31
+    unless params["date"] and params["date"].to_i >= 1 and params["date"].to_i <= 31
       @error_messages.push "date가 잘못 입력되었습니다."
     end
 
-    unless params["month"].to_i >= 1 and params["month"].to_i <= 12
+    unless params["month"] and params["month"].to_i >= 1 and params["month"].to_i <= 12
       @error_messages.push "month가 잘못 입력되었습니다."
     end
 
-    unless params["year"].to_i >= 1800 and params["year"].to_i <= 2500
+    unless params["year"] and params["year"].to_i >= 1800 and params["year"].to_i <= 2500
       @error_messages.push "year가 잘못 입력되었습니다."
     end
 
-    unless params["name"].length >= 1
+    unless params["name"] and params["name"].length >= 1
       @error_messages.push "이름을 입력해 주세요"
     end
 
