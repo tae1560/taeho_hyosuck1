@@ -99,3 +99,26 @@ table.admin_content {
     text-align: left;
   }
 }
+
+.description_textarea {
+  height: 150px;
+  width: 95%;
+  font-size: 12px;
+}
+
+@media print {
+  .no_print {
+    display: none;
+  }
+
+  .large_print {
+    min-width: 500px;
+    min-height: 500px;
+    height: auto;
+  }
+
+  .image_tr img {
+    width: 500px;
+    height: 500px;
+  }
+}
