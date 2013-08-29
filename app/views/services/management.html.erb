@@ -27,24 +27,24 @@
          <tr>
            <td>#<%= @result.two_digit_number%></td>
            <td> </td>
+           <td></td>
          </tr>
          <tr>
            <td> <%= image_tag @result.image1.url %> </td>
            <td> <%= image_tag @result.image2.url %> </td>
+           <td></td>
          </tr>
          <tr>
            <td style="text-align: right;"> <%= form.file_field :image1 %> </td>
            <td style="text-align: right;"> <%= form.file_field :image2 %> </td>
-           <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
-           <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
-         </tr>
-         <tr>
-           <td><textarea name="text1"><%= @result.text1 %></textarea></td>
-           <td><textarea name="text2"><%= @result.text2 %></textarea></td>
-         </tr>
-         <tr>
            <td></td>
-           <td style="text-align: right;"> <%= image_submit_tag "/images/save_button.png" %>  </td>
+           <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
+           <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
+         </tr>
+         <tr>
+           <td><textarea name="text1" style="width: 95%; height: 150px; font-size: 12px;"><%= @result.text1 %></textarea></td>
+           <td><textarea name="text2" style="width: 95%; height: 150px; font-size: 12px;"><%= @result.text2 %></textarea></td>
+           <td><%= image_submit_tag "/images/save_button.png" %></td>
          </tr>
        </table>
       <% end %>

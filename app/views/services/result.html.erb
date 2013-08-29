@@ -1,5 +1,6 @@
 <div class="container">
 <div style="margin-top: 10px;">
+  <% if @result %>
   <table>
     <tr>
       <td rowspan="2"><img src="/images/description.png" /></td>
@@ -10,32 +11,43 @@
       <td style="max-width: 700px;">
         <table class="admin_content">
           <tr>
-            <td>#<%= @result.two_digit_number%></td>
-            <td> </td>
+            <td colspan="3">
+              <%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></td>
           </tr>
           <tr>
             <td> <%= image_tag @result.image1.url %> </td>
             <td> <%= image_tag @result.image2.url %> </td>
+            <td></td>
           </tr>
           <tr>
             <td style="font-size: 15px;"> CHARACTER & DISPOSITION </td>
             <td style="font-size: 15px;"> ADVANTAGES AND DISADVANTAGES </td>
-            <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
-            <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
-          </tr>
-          <tr>
-            <td><textarea name="text1"><%= @result.text1 %></textarea></td>
-            <td><textarea name="text2"><%= @result.text2 %></textarea></td>
-          </tr>
-          <tr>
             <td></td>
-            <td style="text-align: right;">
-              <a href="scan" ><img src="/images/rescan_button.png" /> </a>
-              <a href="#" ><img src="/images/print_button.png" onclick="window.print()" /> </a> </td>
+            <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
+            <!--<td style="text-align: right;"> <img src="/images/open_button.png" />  </td>-->
+          </tr>
+          <tr>
+            <td><textarea name="text1" style="width: 95%; height: 150px; font-size: 12px;"><%= @result.text1 %></textarea></td>
+            <td><textarea name="text2" style="width: 95%; height: 150px; font-size: 12px;"><%= @result.text2 %></textarea></td>
+            <td style="min-width: 150px;"><a href="scan" ><img src="/images/rescan_button.png" /> </a>
+              <br/><br/>
+              <a href="#" ><img src="/images/print_button.png" onclick="window.print()" /> </a> </td></td>
           </tr>
         </table>
       </td>
     </tr>
   </table>
+  <% else %>
+  <h1 style="color: white;"> ERROR </h1>
+  <ul style="color: white; font-size: 30px; text-align: left; margin-left: 100px;">
+    <% @error_messages.each do |error_message| %>
+        <li style=" margin: 30px;"><%= error_message %></li>
+    <% end %>
+  </ul>
+      <a onclick="history.go(-1);">
+        <img src="/images/back_button.png">
+      </a>
+
+  <% end %>
 </div>
 </div>
