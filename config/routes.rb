@@ -9,6 +9,6 @@ Hyosuck1::Application.routes.draw do
   match 'authenticate', to: 'services#authenticate', :via => :all
   match 'scan', to: 'services#scan', :via => :all
   match 'processing', to: 'services#processing', :via => :all
-  match 'result', to: 'services#result', :via => :all
+  match 'result/:id', to: 'services#result', :via => :all
   match 'api', to: 'services#api', :via => :all
 end

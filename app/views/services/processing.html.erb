@@ -1,0 +1,62 @@
+<% if @error_messages.count == 0 %>
+
+<div class="admin_title_container" style="background: none;">
+<span class="admin_title">
+    PROCESSING
+
+  <% 30.times do %>
+          &nbsp;
+      <% end %>
+  </span>
+</div>
+
+<div style="margin-top: 100px;">
+
+  <div id="progressbar" style="width: 600px; margin: auto;"> </div>
+
+  <br/>
+  <a href="/" >
+    <img src="images/back_button.png">
+  </a>
+</div>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+    $( "#progressbar" ).progressbar({
+        value: 20
+    });
+
+    setTimeout(function() {
+        $( "#progressbar" ).progressbar({
+            value: 50
+        });
+//        setTimeout(function() {},800);
+        setTimeout(function() {
+            $( "#progressbar" ).progressbar({
+                value: 73
+            });
+
+            setTimeout(function() {
+                $( "#progressbar" ).progressbar({
+                    value: 100
+                });
+
+                // animation terminated
+                // => load next page
+                window.location.href = "/result/<%=@processing.id%>";
+            },1000)
+        },800)
+    }, 1500);
+</script>
+<% else %>
+    <h1 style="color: white;"> ERROR </h1>
+    <ul style="color: white; font-size: 30px; text-align: left; margin-left: 100px;">
+      <% @error_messages.each do |error_message| %>
+          <li style=" margin: 30px;"><%= error_message %></li>
+      <% end %>
+    </ul>
+    <a onclick="call_event('cancel'); history.go(-1);">
+      <img src="/images/back_button.png">
+    </a>
+<% end %>

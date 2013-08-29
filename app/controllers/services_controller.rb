@@ -72,10 +72,6 @@ class ServicesController < ApplicationController
   end
 
   def processing
-
-  end
-
-  def result
     @error_messages = []
     # validates
 
@@ -126,8 +122,15 @@ class ServicesController < ApplicationController
         @processing.scan_image = params["processing"]["scan_image"]
       end
       if @processing.save
-        @result =  Result.find_by_data @processing.month, @processing.day, @processing.blood_type, @processing.category
+        #@result =  Result.find_by_data @processing.month, @processing.day, @processing.blood_type, @processing.category
       end
+    end
+  end
+
+  def result
+    @processing = Processing.find_by_id(params[:id])
+    if(@processing)
+      @result =  Result.find_by_data @processing.month, @processing.day, @processing.blood_type, @processing.category
     end
 
     #{"date"=>"", "month"=>"", "year"=>"", "name"=>"", "gender"=>"MALE", "blood_type"=>"A", "category"=>"REGULAR", "data_type"=>"LEFT HAND", "x"=>"32", "y"=>"41", "action"=>"result", "controller"=>"services"}
