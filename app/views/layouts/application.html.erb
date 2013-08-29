@@ -8,6 +8,12 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+    <script>
+      function call_event(event) {
+          $.ajax( "/api?event=" + event )
+                  .always(function(e) { console.log(e); });
+      }
+    </script>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <!--<div class="navbar navbar-fixed-top">-->

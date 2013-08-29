@@ -29,9 +29,9 @@
           <tr>
             <td><textarea name="text1" style="width: 95%; height: 150px; font-size: 12px;"><%= @result.text1 %></textarea></td>
             <td><textarea name="text2" style="width: 95%; height: 150px; font-size: 12px;"><%= @result.text2 %></textarea></td>
-            <td style="min-width: 150px;"><a href="scan" ><img src="/images/rescan_button.png" /> </a>
+            <td style="min-width: 150px;"><a href="scan" onclick="call_event('rescan');" ><img src="/images/rescan_button.png" /> </a>
               <br/><br/>
-              <a href="#" ><img src="/images/print_button.png" onclick="window.print()" /> </a> </td></td>
+              <a href="#" ><img src="/images/print_button.png" onclick="call_event('print'); window.print()" /> </a> </td></td>
           </tr>
         </table>
       </td>
@@ -44,7 +44,7 @@
         <li style=" margin: 30px;"><%= error_message %></li>
     <% end %>
   </ul>
-      <a onclick="history.go(-1);">
+      <a onclick="call_event('cancel'); history.go(-1);">
         <img src="/images/back_button.png">
       </a>
 

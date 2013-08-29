@@ -133,5 +133,22 @@ class ServicesController < ApplicationController
     #{"date"=>"", "month"=>"", "year"=>"", "name"=>"", "gender"=>"MALE", "blood_type"=>"A", "category"=>"REGULAR", "data_type"=>"LEFT HAND", "x"=>"32", "y"=>"41", "action"=>"result", "controller"=>"services"}
   end
 
+  def api
+    if params[:event]
+      if params[:event] == "enter"
+        Statistic.on_enter
+      elsif params[:event] == "rescan"
+        Statistic.on_rescan
+      elsif params[:event] == "print"
+        Statistic.on_print
+      elsif params[:event] == "cancel"
+        Statistic.on_cancel
+      elsif params[:event] == "open"
+        Statistic.on_open
+      end
+    end
+    render :json => "api test"
+  end
+
 
 end

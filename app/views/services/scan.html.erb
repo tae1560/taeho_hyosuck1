@@ -16,7 +16,11 @@
       <td>
         <div class="admin_content" style="margin-top: 20px; margin-bottom: 20px; text-align: left;">SCAN IMAGE</div>
         <div><img src="/images/scan_image.png"/></div>
-        <%= form.file_field :scan_image %>
+        <!--processing_scan_image-->
+        <div style="margin-top: 10px;"><img src="/images/open_button.png" onclick="call_event('open'); $('#processing_scan_image').click();"/></div>
+        <div style='height: 0px;width:0px; overflow:hidden;'><%= form.file_field :scan_image %></div>
+
+
       </td>
       <td style="text-align: left;">
         <div class="admin_content" style="margin-top: 20px; margin-bottom: 20px; text-align: left;">IDENTICATION DATA</div>
