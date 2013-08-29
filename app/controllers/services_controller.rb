@@ -43,10 +43,10 @@ class ServicesController < ApplicationController
       @result.text1 = params[:text1]
       @result.text2 = params[:text2]
 
-      if params["result"]["image1"]
+      if params["result"] and params["result"]["image1"]
         @result.image1 = params["result"]["image1"]
       end
-      if params["result"]["image2"]
+      if params["result"] and params["result"]["image2"]
         @result.image2 = params["result"]["image2"]
       end
 
