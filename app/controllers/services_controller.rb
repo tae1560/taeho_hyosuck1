@@ -96,12 +96,20 @@ class ServicesController < ApplicationController
       @error_messages.push "성별을 선택해주세요"
     end
 
+    unless params["gender"]
+      @error_messages.push "성별을 선택해주세요"
+    end
+
     if !params["category"]
       @error_messages.push "catogory를 선택해주세요"
     elsif params["category"] == "REGULAR"
       unless params["blood_type"]
         @error_messages.push "혈액형을 선택해주세요"
       end
+    end
+
+    unless params["processing"] and params["processing"]["scan_image"]
+      @error_messages.push "SCAN IMAGE를 입력해주세요."
     end
 
 
