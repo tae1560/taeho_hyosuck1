@@ -9,7 +9,7 @@
 
     <tr>
       <td style="max-width: 700px;">
-        <table class="admin_content">
+        <table class="admin_content no_print">
           <tr>
             <td colspan="3">
               <%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></td>
@@ -37,6 +37,15 @@
       </td>
     </tr>
   </table>
+      <div class="only_print">
+        <div class="image_tr">
+          <%= image_tag @result.image1.url %>
+          <textarea name="text1" class="large_print description_textarea page_break_after"><%= @result.text1 %></textarea>
+
+          <%= image_tag @result.image2.url %>
+          <textarea name="text2" class="large_print description_textarea"><%= @result.text2 %></textarea>
+        </div>
+      </div>
   <% else %>
       <h1 style="color: white;"> Invalid Access </h1>
       <a onclick="history.go(-1);">

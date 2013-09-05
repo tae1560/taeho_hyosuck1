@@ -106,19 +106,37 @@ table.admin_content {
   font-size: 12px;
 }
 
+.only_print {
+  display: none;
+}
+
 @media print {
   .no_print {
     display: none;
   }
 
+  .only_print {
+    display: block;
+    width: 1000px;
+  }
+
   .large_print {
-    min-width: 500px;
-    min-height: 500px;
+    width: 100%;
+    min-height: 600px;
+    max-height: 600px;
     height: auto;
+    display: block;
+
+  }
+
+  .page_break_after {
+    page-break-after:always
   }
 
   .image_tr img {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    display: block;
   }
 }
