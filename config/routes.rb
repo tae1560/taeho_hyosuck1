@@ -10,5 +10,6 @@ Hyosuck1::Application.routes.draw do
   match 'scan', to: 'services#scan', :via => :all
   match 'processing', to: 'services#processing', :via => :all
   match 'result/:id', to: 'services#result', :via => :all
+  match 'result_print/:id', to: 'services#result_print', :via => :all
   match 'api', to: 'services#api', :via => :all
 end

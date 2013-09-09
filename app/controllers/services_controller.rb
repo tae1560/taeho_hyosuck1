@@ -144,6 +144,13 @@ class ServicesController < ApplicationController
     #{"date"=>"", "month"=>"", "year"=>"", "name"=>"", "gender"=>"MALE", "blood_type"=>"A", "category"=>"REGULAR", "data_type"=>"LEFT HAND", "x"=>"32", "y"=>"41", "action"=>"result", "controller"=>"services"}
   end
 
+  def result_print
+    @processing = Processing.find_by_id(params[:id])
+    if(@processing)
+      @result =  Result.find_by_data @processing.month, @processing.day, @processing.blood_type, @processing.category
+    end
+  end
+
   def api
     if params[:event]
       if params[:event] == "enter"

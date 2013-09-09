@@ -1,0 +1,55 @@
+<style>
+
+    div.print_container {
+        width: 90%;
+        margin: auto;
+    }
+    div.print_container div span {
+        text-align: left;
+        width: 100%;
+        display: block;
+
+        margin-bottom: 10px;
+
+    }
+    div.print_container img {
+        width: 100%;
+    }
+  div.print_container div {
+
+  }
+</style>
+<div class="print_container">
+  <div>
+    <span>
+    <%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></td>
+</span>
+  </div>
+  <div>
+    <span>
+    MINDCAREKOREA.COM
+        <span>
+  </div>
+  <div>
+    <%= image_tag @result.image1.url %>
+  </div>
+  <div>
+    <%= image_tag @result.image2.url %>
+  </div>
+  <div>
+    <%= @result.text1 %>
+  </div>
+  <div>
+    <%= @result.text2 %>
+  </div>
+
+
+
+
+
+
+</div>
+
+<script>
+    window.print();
+</script>
