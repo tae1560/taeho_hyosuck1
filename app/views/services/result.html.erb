@@ -31,7 +31,7 @@
             <td><textarea name="text2" class="large_print description_textarea"><%= @result.text2 %></textarea></td>
             <td  class="no_print" style="min-width: 150px;"><a href="/scan" onclick="call_event('rescan');" ><img  src="/images/rescan_button.png" /> </a>
               <br/><br/>
-              <a href="#" ><img class="no_print" src="/images/print_button.png" onclick="call_event('print'); window.open('/result_print/<%= @processing.id %>')" /> </a> </td></td>
+              <a href="#" ><img class="no_print" src="/images/print_button.png" onclick="call_event('print'); window.open('/result_print/<%= @processing.id %>','target_name','scrollbars=yes,toolbar=no,resizable=no,width=595,height=842,left=0,top=0')" /> </a> </td></td>
           </tr>
         </table>
       </td>
