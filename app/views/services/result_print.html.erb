@@ -20,6 +20,13 @@
         font-size: 1.0em;
       line-height: 1.5em;
 	text-align: left;
+      margin-bottom: 30px;
+  }
+
+  div.print_container div pre {
+      background: none;
+      border: none;
+      display: inline;
   }
 
         .mid_layout {
@@ -41,16 +48,19 @@
     <%= image_tag @result.image1.url %>
   </div>
   <div>
+    <pre>
+    <%= @result.text1 %>
+        </pre>
+  </div>
+  <div class="page_break_after"></div>
+  <div>
     <%= image_tag @result.image2.url %>
   </div>
-	<br />
-	<br />
-	<br />
+
   <div>
-    <%= @result.text1 %>
-  </div>
-  <div>
+    <pre>
     <%= @result.text2 %>
+        </pre>
   </div>
 
 
