@@ -8,19 +8,16 @@
         text-align: left;
         width: 100%;
         display: block;
-
-        margin-bottom: 10px;
-
         font-size: 1.1em;
     }
     div.print_container img {
         width: 100%;
     }
   div.print_container div {
-        font-size: 0.9em;
-      line-height: 1.5em;
+        font-size: 0.6em;
+      line-height: 1.0em;
 	text-align: left;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
   }
 
   div.print_container div pre {
@@ -29,20 +26,29 @@
       display: inline;
   }
 
+  div.print_container div.no_margin {
+      margin: 0px;
+  }
+
+  .top_layout, .bottom_layout {
+      display: none;
+  }
+
         .mid_layout {
             width: 100%;
         }
+
+        .start_margin {
+            margin-top: 50px;
+        }
 </style>
 <div class="print_container">
-  <div>
-    <span>
-    <%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></td>
-</span>
+  <div class="start_margin"> </div>
+  <div class="no_margin">
+    <span><%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></span>
   </div>
   <div>
-    <span>
-    MINDCAREKOREA.COM
-        <span>
+    <span>MINDCAREKOREA.COM<span>
   </div>
   <div>
     <%= image_tag @result.image1.url %>
@@ -50,7 +56,16 @@
   <div>
     <pre><%= @result.text1 %></pre>
   </div>
+
   <div class="page_break_after"></div>
+
+  <div class="start_margin"> </div>
+  <div class="no_margin">
+    <span><%= @processing.updated_at.in_time_zone("Seoul").time.strftime("%d-%m-%Y %p %I:%M") %> | SCAN <%= @processing.id %> | KOREAN 한국어판 | <%= @processing.name %></span>
+  </div>
+  <div>
+    <span>MINDCAREKOREA.COM<span>
+  </div>
   <div>
     <%= image_tag @result.image2.url %>
   </div>
